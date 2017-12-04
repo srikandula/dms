@@ -1,0 +1,100 @@
+{
+  "basePath": "/_ah/api",
+  "consumes": [
+    "application/json"
+  ],
+  "definitions": {
+    "ComAbcDmsVoFileVoFile": {
+      "properties": {
+        "createdBy": {
+          "type": "string"
+        },
+        "createdOn": {
+          "type": "string"
+        },
+        "description": {
+          "type": "string"
+        },
+        "file_id": {
+          "type": "string"
+        },
+        "folder_id": {
+          "type": "string"
+        },
+        "icon": {
+          "type": "string"
+        },
+        "is_sepcial": {
+          "type": "string"
+        },
+        "mimeType": {
+          "type": "string"
+        },
+        "name": {
+          "type": "string"
+        },
+        "repo_id": {
+          "type": "string"
+        },
+        "sequence": {
+          "format": "int64",
+          "type": "string"
+        },
+        "size": {
+          "format": "int64",
+          "type": "string"
+        },
+        "status": {
+          "type": "string"
+        },
+        "type": {
+          "type": "string"
+        }
+      },
+      "type": "object"
+    }
+  },
+  "host": "affable-radio-180608.appspot.com",
+  "info": {
+    "title": "dms",
+    "version": "v1"
+  },
+  "paths": {
+    "/dms/v1/info": {
+      "get": {
+        "operationId": "FileRestWS_get",
+        "parameters": [
+          {
+            "in": "query",
+            "name": "file_id",
+            "type": "string"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "A successful response",
+            "schema": {
+              "$ref": "#/definitions/ComAbcDmsVoFileVoFile"
+            }
+          }
+        }
+      }
+    }
+  },
+  "produces": [
+    "application/json"
+  ],
+  "schemes": [
+    "https"
+  ],
+  "securityDefinitions": {
+    "google_id_token": {
+      "authorizationUrl": "",
+      "flow": "implicit",
+      "type": "oauth2",
+      "x-google-issuer": "https://accounts.google.com",
+      "x-google-jwks_uri": "https://www.googleapis.com/oauth2/v3/certs"
+    }
+  },
+  "swagger": "2.0"
+}

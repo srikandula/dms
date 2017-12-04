@@ -1,0 +1,26 @@
+# Notice: This template has only been tested 
+# under Python27 + GAE standard environment
+service: dms
+threadsafe: true
+
+#Python runtime environment 2.7. (And api_version:1 means use latest python available) 
+runtime: python27
+api_version: 1
+
+env_variables:
+  ENDPOINTS_SERVICE_NAME: affable-radio-180608.appspot.com
+  ENDPOINTS_SERVICE_VERSION: 2017-11-26r1
+
+handlers:
+- url: /_ah/api/.*
+  script: com.abc.dms.rest.urls.endpoint_app
+  
+- url: /dms/user
+  script: com.abc.dms.rest.urls.webapp2_app  
+  
+
+libraries:
+- name: pycrypto
+  version: 2.6
+- name: ssl
+  version: 2.7.11
